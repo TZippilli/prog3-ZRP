@@ -9,7 +9,6 @@ nav {
     background-color: #1035a2;
     color: #fff;
     font-family: 'Baloo 2', cursive; 
-    background: linear-gradient(135deg, #1035a2 25%, #3a63de 100%); /* revisar si queremos esto o no*/
     position: relative; 
 }
 

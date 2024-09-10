@@ -1,12 +1,13 @@
+import PopularGrid from "../Components/PopularGrid/PopularGrid"
 import SearchForm from "../Components/SearchForm/SearchForm"
 
 
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
       <main>
        <SearchForm />
+       <PopularGrid />
       </main>
     </>
   )
