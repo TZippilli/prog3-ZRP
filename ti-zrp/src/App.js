@@ -6,6 +6,7 @@ import Favoritos from './pages/Favoritos';
 import Footer from './Components/Footer/Footer';
 import PaginaPopulares from './pages/Populares';
 import PaginaCarteleras from './pages/Cartelera';
+import MovieDetail from './Components/MovieDetail/MovieDetail';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/favoritos" exact component={Favoritos} />
         <Route path="/populares" exact component={PaginaPopulares} />
         <Route path="/cartelera" exact component={PaginaCarteleras} />
+        <Route path="/movies/:movieId" exact component={MovieDetail} />
       </Switch>
       <Footer />
     </>

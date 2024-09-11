@@ -34,7 +34,7 @@ class Movie extends Component {
               {this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}
             </button>
             {this.state.showExtra && <p>{overview}</p>}
-            <button className="botonDetalle">Ver detalle</button>
+            <Link to={`/movies/${id}`}><button className="botonDetalle">Ver detalle</button></Link>
           </div>
           <Link to="/favoritos">
             <button className="botonFavorito">
