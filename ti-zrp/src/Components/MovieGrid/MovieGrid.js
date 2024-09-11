@@ -17,7 +17,7 @@ class MovieGrid extends Component {
     // if ternario para decidir que API usar
     const apiUrl = cualMostrar
       ? 'https://api.themoviedb.org/3/movie/now_playing?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=1'
-      : 'https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=1';
+      : 'https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=';
 
     fetch(apiUrl)
       .then(response => response.json())
@@ -54,7 +54,7 @@ class MovieGrid extends Component {
             ? peliculasLimit.map((movie, index) => (
               <Movie movie={movie} key={index} />
             ))
-            : <p>Cargando...</p>}
+            : <img src="./gifLoader.gif" alt="loader" ></img>}
         </div>
       </section>
     );
