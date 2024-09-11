@@ -7,7 +7,7 @@ class MovieGrid extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: [] 
+      movies: []
     };
   }
 
@@ -15,15 +15,15 @@ class MovieGrid extends Component {
     const { cualMostrar } = this.props; // agrego prop para decidir entre popular y cartelera para reutilizar el comp
 
     // if ternario para decidir que API usar
-    const apiUrl = cualMostrar 
+    const apiUrl = cualMostrar
       ? 'https://api.themoviedb.org/3/movie/now_playing?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=1'
       : 'https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=1';
 
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
-        if (data && data.results) { 
-          this.setState({ movies: data.results }); 
+        if (data && data.results) {
+          this.setState({ movies: data.results });
         } else {
           console.error("No se encuentran películas");
         }
@@ -42,10 +42,12 @@ class MovieGrid extends Component {
     return (
       <section className='popular-container'>
         <div className="tituloGrupo">
-          <h2 className="tituloSeccion">
-            {this.props.cualMostrar ? "Películas en Cartelera" : "Películas Populares"}
-          </h2>
-          {limit ? <Link to={this.props.cualMostrar ? "/cartelera" : "/populares"}><button>Ver todas</button></Link> : null}
+          <div className="tituloConBoton">
+            <h2 className="tituloSeccion">
+              {this.props.cualMostrar ? "Películas en Cartelera" : "Películas Populares"}
+            </h2>
+            {limit ? <Link to={this.props.cualMostrar ? "/cartelera" : "/populares"}><button>Ver todas</button></Link> : null}
+          </div>
         </div>
         <div className="popular-card">
           {peliculasLimit && peliculasLimit.length > 0
