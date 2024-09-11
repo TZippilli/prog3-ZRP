@@ -10,6 +10,7 @@ const Navbar = () => {
       <ul className="main-nav">
         <Link to="/">Home</Link>
         <Link to="/favoritos">Favoritos</Link>
+        <Link to="/populares">Populares</Link>
       </ul>
       <div className="user">
         <span>Nombre usuario</span>

@@ -2,7 +2,7 @@ import "./PopularGrid.css";
 import { Link } from "react-router-dom";
 import { Component } from "react";
 import Popular from "../Popular/Popular";
-import { options } from "../../options";
+
 
 
 class PopularGrid extends Component {
@@ -28,13 +28,20 @@ class PopularGrid extends Component {
 
   render() {
     const { popularMovies } = this.state;
+    const { limit } = this.props;  // creo esta prop para limitar el display en Home y reutilizar el componente
 
+    // si hay tal límite, muestro {limit} peliculas, sino todas
+    const popularLimit = limit ? popularMovies.slice(0, limit) : popularMovies;
+    //en el Link, si existe un limite, muestra el boton, sino no
     return (
       <section className='popular-container'>
+        <div className="tituloGrupo">
         <h2 className="tituloSeccion">Películas Populares</h2>
+        {limit ? <Link to="/populares"><button>Ver todas</button></Link> : null}
+        </div> 
         <div className="popular-card">
-          {popularMovies && popularMovies.length > 0
-            ? popularMovies.map((movie, index) => (
+          {popularLimit && popularLimit.length > 0
+            ? popularLimit.map((movie, index) => (
               <Popular movie={movie} key={index} />
             ))
             : <p>Cargando...</p>} 

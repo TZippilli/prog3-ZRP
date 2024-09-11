@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <main>
        <SearchForm />
-       <PopularGrid />
+       <PopularGrid limit={5} />
       </main>
     </>
   )

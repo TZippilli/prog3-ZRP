@@ -29,7 +29,6 @@ class Popular extends Component {
             <button className="botonDescripcion" onClick={() => this.verDescripcion()}> 
               {this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}
             </button>
-  
             {this.state.showExtra && <p>{overview}</p>}
 
             <button className='botonDetalle'>Ver detalle</button> 
