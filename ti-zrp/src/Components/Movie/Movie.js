@@ -1,8 +1,8 @@
-import "./Popular.css"
+import "./Movie.css"
 import { Link } from "react-router-dom";
 import { Component } from "react";
 
-class Popular extends Component {
+class Movie extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -16,7 +16,6 @@ class Popular extends Component {
       });
     }
   //revisar en el Link la ruta que le voy a poner al detalle
-  //revisar los campos del destructuring
     render() {
       const { id, title, poster_path, overview } = this.props.movie;
   
@@ -38,6 +37,6 @@ class Popular extends Component {
     }
   } //cambiar el ver detalle por un link en todo el espacio de la pelicula que lleve al detalle
   
-  export default Popular;
+  export default Movie;
   
   

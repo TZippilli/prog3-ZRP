@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Favoritos from './pages/Favoritos';
 import Footer from './Components/Footer/Footer';
 import PaginaPopulares from './pages/Populares';
+import PaginaCarteleras from './pages/Cartelera';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/favoritos" exact component={Favoritos} />
         <Route path="/populares" exact component={PaginaPopulares} />
+        <Route path="/cartelera" exact component={PaginaCarteleras} />
       </Switch>
       <Footer />
     </>

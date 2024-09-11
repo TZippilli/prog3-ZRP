@@ -11,6 +11,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/favoritos">Favoritos</Link>
         <Link to="/populares">Populares</Link>
+        <Link to="/cartelera">Cartelera</Link>
       </ul>
       <div className="user">
         <span>Nombre usuario</span>

@@ -1,12 +1,10 @@
-import PopularGrid from "../Components/PopularGrid/PopularGrid"
-import SearchForm from "../Components/SearchForm/SearchForm"
+import MovieGrid from "../Components/MovieGrid/MovieGrid"
 
 const PaginaPopulares = () => {
     return (
       <>
         <main>
-         <SearchForm />
-         <PopularGrid />
+        <MovieGrid cualMostrar={false}/>
         </main>
       </>
     )

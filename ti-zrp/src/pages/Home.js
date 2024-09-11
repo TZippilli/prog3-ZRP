@@ -1,4 +1,4 @@
-import PopularGrid from "../Components/PopularGrid/PopularGrid"
+import MovieGrid from "../Components/MovieGrid/MovieGrid"
 import SearchForm from "../Components/SearchForm/SearchForm"
 
 
@@ -7,7 +7,8 @@ const Home = () => {
     <>
       <main>
        <SearchForm />
-       <PopularGrid limit={5} />
+       <MovieGrid limit={5} cualMostrar={true}/>
+       <MovieGrid limit={5} cualMostrar={false}/>
       </main>
     </>
   )
