@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import PaginaPopulares from './pages/Populares';
 import PaginaCarteleras from './pages/Cartelera';
 import MovieDetail from './Components/MovieDetail/MovieDetail';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/populares" exact component={PaginaPopulares} />
         <Route path="/cartelera" exact component={PaginaCarteleras} />
         <Route path="/movies/:movieId" exact component={MovieDetail} />
+        <Route component={NotFound} ></Route> 
       </Switch>
       <Footer />
     </>
