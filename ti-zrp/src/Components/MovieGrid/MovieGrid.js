@@ -56,11 +56,6 @@ class MovieGrid extends Component {
             ))
             : <img src="./gifLoader.gif" alt="loader" ></img>}
         </div>
-        <div className="cargar-mas">
-          {limit ? null 
-            
-            : <Link to={this.props.cualMostrar ? "/cartelera" : "/populares"}><button>Cargar más</button></Link>}
-        </div>
         
       </section>
     );
