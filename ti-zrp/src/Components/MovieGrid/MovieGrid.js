@@ -28,7 +28,7 @@ class MovieGrid extends Component {
 
   render() {
     const { movies } = this.state;
-    const { limit } = this.props;  // con esta prop limito cuantas se muestran para reutilizar el comp en Home y ver más
+    const { limit, link, titulo } = this.props;  // con esta prop limito cuantas se muestran para reutilizar el comp en Home y ver más
 
     // si hay tal límite, muestro {5} películas, sino todas
     const peliculasLimit = limit ? movies.slice(0, limit) : movies;
@@ -39,9 +39,9 @@ class MovieGrid extends Component {
         <div className="tituloGrupo">
           <div className="tituloConBoton">
             <h2 className="tituloSeccion">
-              {this.props.cualMostrar ? "Películas en Cartelera" : "Películas Populares"}
+              {titulo} 
             </h2>
-            {limit ? <Link to={this.props.cualMostrar ? "/cartelera" : "/populares"}><button>Ver todas</button></Link> : null}
+            {limit ? <Link to={link}><button>Ver todas</button></Link> : null}
           </div>
         </div>
         <div className="popular-card">
