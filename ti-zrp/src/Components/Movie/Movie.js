@@ -10,8 +10,52 @@ class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showExtra: false
+      showExtra: false,
+      esFavorito: false
     };
+  }
+
+  componentDidMount() {
+    const storage = localStorage.getItem('favoritos')
+    if (storage !== null) {
+      const parsedArray = JSON.parse(storage)
+      const estaEnFavoritos = parsedArray.includes(this.props.movie.id)
+      this.setState({
+        esFavorito: estaEnFavoritos
+      })
+    }
+  }
+
+  agregarFavorito() {
+    const storage = localStorage.getItem('favoritos')
+    if (storage !== null) {
+      const parsedArray = JSON.parse(storage)
+      parsedArray.push(this.props.movie.id)
+      const stringArray = JSON.stringify(parsedArray)
+      localStorage.setItem('favoritos', stringArray)
+
+
+    } else {
+      const primerMovie = [this.props.movie.id]
+      const stringArray = JSON.stringify(primerMovie)
+      localStorage.setItem('favoritos', stringArray)
+    }
+    this.setState({
+      esFavorito: true
+    })
+  }
+
+  sacarFavorito() {
+    const storage = localStorage.getItem('favoritos')
+    const parsedArray = JSON.parse(storage)
+    const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id)
+    const stringArray = JSON.stringify(favoritosRestantes)
+    localStorage.setItem('favoritos', stringArray)
+
+    this.setState({
+      esFavorito: false
+    })
+
   }
 
   verDescripcion() {
@@ -37,8 +81,9 @@ class Movie extends Component {
             <Link to={`/movies/${id}`}><button className="botonDetalle">Ver detalle</button></Link>
           </div>
           <Link to="/favoritos">
-            <button className="botonFavorito">
-              <FontAwesomeIcon icon={faStar} /> 
+            <button onClick={this.handleClick} className="botonFavorito">
+              {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}
+              <FontAwesomeIcon icon={faStar} />
             </button>
           </Link>
         </div>
