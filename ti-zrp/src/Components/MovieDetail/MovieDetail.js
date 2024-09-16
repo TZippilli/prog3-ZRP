@@ -25,7 +25,7 @@ class MovieDetail extends Component {
 
     //si no hay peliculas o estan cargando:
     if (!movie) {
-      return <p>Cargando detalles...</p>;
+      return <img src="./gifLoader.gif" alt="loader" ></img>;
     }
 
     //destructuring para todos los campos que me pide la consigna

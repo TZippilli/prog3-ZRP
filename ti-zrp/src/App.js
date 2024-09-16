@@ -8,7 +8,7 @@ import PaginaPopulares from './pages/Populares';
 import PaginaCarteleras from './pages/Cartelera';
 import NotFound from './pages/NotFound';
 import MovieDetail from './Components/MovieDetail/MovieDetail';
-import PaginaMovieDetail from './pages/MovieDetail'; //uso esto? me da error
+import ResultadoDeBusqueda from './Components/ResultadoDeBusqueda/ResultadoDeBusqueda';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
         <Route path="/cartelera" exact component={PaginaCarteleras} />
         <Route path="/movies/:movieId" exact component={MovieDetail} /> 
         <Route component={NotFound} ></Route> 
+        <Route path="/search" exact component={ResultadoDeBusqueda} />
       </Switch>
       <Footer />
     </>
