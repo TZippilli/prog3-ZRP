@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import './SearchForm.css'; 
 
 export class SearchForm extends Component {
 
@@ -22,15 +23,18 @@ export class SearchForm extends Component {
 
   render() {
     return (
-      <div>
-        <input onChange={(e) => this.handleInputChange(e)}
-            type='text' name="query" value={this.state.query}/>
+      <div className="search-form">
+        <input 
+          onChange={(e) => this.handleInputChange(e)}
+          type='text' 
+          name="query" 
+          value={this.state.query} 
+          placeholder="Search Movie"
+        />
         <button onClick={() => this.handleInputSubmit()}>Search Movie</button>
-
       </div>
     )
   }
 }
 
 export default SearchForm
-

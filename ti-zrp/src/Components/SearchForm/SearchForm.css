@@ -1,45 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
 
 .search-form {
-    position: absolute; /* esta bien hacerlo asi o tiene que ser con flex? */
-    top: 120px; 
-    right: 20px; 
-    font-family: 'Baloo 2', cursive;
-    
-}
-
-form {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    margin: 0; 
+    padding: 0;
+    background-color: #1035a2;
 }
 
-.search-input {
+.search-form input {
     padding: 10px;
     font-size: 16px;
     border-radius: 8px;
-    border: 2px solid #1035a2;
-    outline: none;
+    border: none; 
+    margin-right: 10px;
     width: 300px;
-    transition: all 0.3s ease-in-out;
+    box-shadow: none; 
 }
 
-.search-input:focus {
-    border-color: #1035a2;
-}
-
-.search-button {
-    background-color: #1035a2;
-    color: white;
+.search-form button {
     padding: 10px 20px;
-    border: none;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none; 
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.search-button:hover {
-    background-color: #1035a29b;
+    box-shadow: none; 
 }
