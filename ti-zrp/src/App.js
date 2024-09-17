@@ -8,7 +8,7 @@ import PaginaPopulares from './pages/Populares';
 import PaginaCarteleras from './pages/Cartelera';
 import NotFound from './pages/NotFound';
 import MovieDetail from './Components/MovieDetail/MovieDetail';
-import SearchForm from './Components/SearchForm/SearchForm';
+import SearchResults from './pages/SearchResults';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path="/populares" exact component={PaginaPopulares} />
         <Route path="/cartelera" exact component={PaginaCarteleras} />
         <Route path="/movies/:movieId" exact component={MovieDetail} /> 
-        <Route path="/search" exact component={SearchForm} /> 
+        <Route path="/search" exact component={SearchResults} />
         <Route component={NotFound} ></Route> 
 
       </Switch>

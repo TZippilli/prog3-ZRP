@@ -43,3 +43,13 @@
   color: white;
   font-family: 'Baloo 2', cursive;
 }
+
+.search-title {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  background-color: #1035a2;
+  color: #fff;
+  font-family: 'Baloo 2', cursive; 
+  position: relative; 
+}

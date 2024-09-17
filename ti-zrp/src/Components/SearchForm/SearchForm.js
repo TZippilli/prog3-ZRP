@@ -1,40 +1,31 @@
-import { Component } from 'react'
-import './SearchForm.css'; 
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import './SearchForm.css';
 
-export class SearchForm extends Component {
+const SearchForm = () => {
+  const [query, setQuery] = useState('');
+  const history = useHistory();
 
-    constructor(props){
-        super(props)
-        this.state = {
-            query: ""
-        }
-        
-    }
-
-    handleInputChange(e){
-        this.setState({
-            query: e.target.value
-        })
-    }
-
-    handleInputSubmit(){
-      this.props.history.push('/search', { query: this.state.query })
-    }
-
-  render() {
-    return (
-      <div className="search-form">
-        <input 
-          onChange={(e) => this.handleInputChange(e)}
-          type='text' 
-          name="query" 
-          value={this.state.query} 
-          placeholder="Search Movie"
-        />
-        <button onClick={() => this.handleInputSubmit()}>Search Movie</button>
-      </div>
-    )
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
   }
+
+  const handleInputSubmit = () => {
+    history.push('/search', { query });
+  }
+
+  return (
+    <div className="search-form">
+      <input
+        onChange={handleInputChange}
+        type="text"
+        name="query"
+        value={query}
+        placeholder="Search Movie"
+      />
+      <button onClick={handleInputSubmit}>Search Movie</button>
+    </div>
+  );
 }
 
-export default SearchForm
+export default SearchForm;
