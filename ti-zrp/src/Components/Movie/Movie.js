@@ -33,8 +33,6 @@ class Movie extends Component {
       parsedArray.push(this.props.movie.id)
       const stringArray = JSON.stringify(parsedArray)
       localStorage.setItem('favoritos', stringArray)
-
-
     } else {
       const primerMovie = [this.props.movie.id]
       const stringArray = JSON.stringify(primerMovie)
@@ -55,7 +53,6 @@ class Movie extends Component {
     this.setState({
       esFavorito: false
     })
-
   }
 
   verDescripcion() {
@@ -63,7 +60,7 @@ class Movie extends Component {
       showExtra: !this.state.showExtra
     });
   }
-  //revisar en el Link la ruta que le voy a poner al detalle
+
   render() {
     const { id, title, poster_path, overview } = this.props.movie;
 
@@ -80,17 +77,16 @@ class Movie extends Component {
             {this.state.showExtra && <p>{overview}</p>}
             <Link to={`/movies/${id}`}><button className="botonDetalle">Ver detalle</button></Link>
           </div>
-          <Link to="/favoritos">
-            <button onClick={this.handleClick} className="botonFavorito">
-              {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}
-              <FontAwesomeIcon icon={faStar} />
-            </button>
+          <Link to={`/favoritos`}>
+          <button onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>
+            {!this.state.esFavorito ? <FontAwesomeIcon icon={faStar} /> : "Quitar de favoritos"}
+          </button>
           </Link>
+          
         </div>
       </article>
     );
   }
-} //cambiar el ver detalle por un link en todo el espacio de la pelicula que lleve al detalle
+}
 
 export default Movie;
-
