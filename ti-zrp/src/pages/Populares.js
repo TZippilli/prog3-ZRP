@@ -6,18 +6,31 @@ class PaginaPopulares extends Component {
     super(props);
     this.state = {
       movies: [],
-      page : 1
+      filteredMovies: [],
+      filterValue: "",
+      actualPage: 1
     };
   }
 
+  handleFilterChange(e) {
+    const userValue = e.target.value
+
+    this.setState({
+      filterValue: userValue,
+      filteredMovies: this.state.movies.filter(movie => movie.title.toLowerCase().includes(userValue.toLowerCase()))
+    })
+  }  
+
   componentDidMount() {
-    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=${this.state.page}`
+    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=${this.state.actualPage}`
 
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
         if (data && data.results) {
-          this.setState({ movies: data.results, page: this.state.page + 1 });
+          this.setState({ movies: data.results,
+          filteredMovies: data.results,
+          actualPage: this.state.actualPage + 1 });
         } else {
           console.error("No se encuentran películas");
         }
@@ -25,36 +38,44 @@ class PaginaPopulares extends Component {
       .catch(error => console.log(error));
   }
 
-  loadMoreMovies () {
-    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=${this.state.page}`
+  handleLoadMore(){
+    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=${this.state.actualPage}`;
 
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
         if (data && data.results) {
-          this.setState({ movies: [...this.state.movies, data.results], page: this.state.page + 1 });
+          this.setState({ movies: this.state.movies.concat(data.results),
+          filteredMovies: this.state.movies.concat(data.results),
+          actualPage: this.state.actualPage + 1  });
         } else {
           console.error("No se encuentran películas");
         }
       })
       .catch(error => console.log(error));
-
-
   }
 
-
+  handleResetFilter(){
+    this.setState({
+      filterValue: "",
+      filteredMovies: this.state.movies 
+    })
+  }
 
   render() {
     return (
       <>
         <main>
           <h2>Películas Populares</h2>
-          {this.state.movies.length === 0 ? <p>Cargando</p>  : <MovieGrid pelis={this.state.movies}  /> }
-          <button onClick={() => this.loadMoreMovies()} >Cargar más pelis</button>
+          <input type="text" onChange={(e)=> this.handleFilterChange(e)} value={this.state.filterValue} />
+          <button onClick={()=>this.handleResetFilter()}>Reset Filter</button>
+          {this.state.movies.length === 0 ? <p>Cargando</p>  : <MovieGrid pelis={this.state.filteredMovies}  /> }
+          {<button onClick={()=>this.handleLoadMore()}>CARGAR MAS</button>}
         </main>
       </>
     );
   }
+
 }
 
 export default PaginaPopulares;
