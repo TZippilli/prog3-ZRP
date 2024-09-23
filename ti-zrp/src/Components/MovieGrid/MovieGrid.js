@@ -1,60 +1,16 @@
 import "./MovieGrid.css";
 import { Link } from "react-router-dom";
 import { Component } from "react";
+
+import React from 'react'
 import Movie from "../Movie/Movie";
 
-class MovieGrid extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: []
-    };
-  }
-
-  componentDidMount() {
-    const  apiUrl = this.props.url; // agrego prop para decidir entre popular y cartelera para reutilizar el comp
-
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        if (data && data.results) {
-          this.setState({ movies: data.results });
-        } else {
-          console.error("No se encuentran películas");
-        }
-      })
-      .catch(error => console.log(error));
-  }
-
-  render() {
-    const { movies } = this.state;
-    const { limit, link, titulo } = this.props;  // con esta prop limito cuantas se muestran para reutilizar el comp en Home y ver más
-
-    // si hay tal límite, muestro {5} películas, sino todas
-    const peliculasLimit = limit ? movies.slice(0, limit) : movies;
-
-    // en el Link, si existe un límite, muestra el botón, sino no
-    return (
-      <section className='popular-container'>
-        <div className="tituloGrupo">
-          <div className="tituloConBoton">
-            <h2 className="tituloSeccion">
-              {titulo} 
-            </h2>
-            {limit ? <Link to={link}><button>Ver todas</button></Link> : null}
-          </div>
-        </div>
-        <div className="popular-card">
-          {peliculasLimit && peliculasLimit.length > 0
-            ? peliculasLimit.map((movie, index) => (
-              <Movie movie={movie} key={index} />
-            ))
-            : <img src="./gifLoader.gif" alt="loader" ></img>}
-        </div>
-        
-      </section>
-    );
-  }
+const MovieGrid = ({pelis}) => {
+  return (
+    <div className="popular-container">
+    {pelis.map((peli) => <Movie movie={peli} />)}
+    </div>
+  )
 }
 
-export default MovieGrid;
+export default MovieGrid
