@@ -39,7 +39,8 @@ class Favoritos extends Component {
   }
   render() {
     return (
-      <article className='movie-card'>
+     
+      <div className='popular-container'>
       <div className="card-content">
         {!this.state.isLoading ? (
           this.state.movies.length > 0 ? (
@@ -53,7 +54,8 @@ class Favoritos extends Component {
           <p>Loading ...</p>
         )}
       </div>
-      </article>
+      </div>
+
     );
   }
 }
