@@ -8,7 +8,7 @@ const Footer = () => {
         <ul className="nombres">
           <li>Francisco Roques</li>
           <li>Lautaro Pineda</li>
-          <li>Tomas Zippilli</li>
+          <li>Tomás Zippilli</li>
         </ul>
       </div>
     </footer>

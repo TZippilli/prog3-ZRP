@@ -31,16 +31,16 @@ class Movie extends Component {
             </Link>
           </div>
           <div className="textoMovie">
-          <div className="botonContainer">
-            <button className="botonDescripcion" onClick={() => this.verDescripcion()}>
-              {this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}
-            </button>
-            {this.state.showExtra && <p>{overview}</p>}
-            <Link to={`/movies/${id}`}><button className="botonDetalle">Ver detalle</button></Link>
-            <BotonFav id={id} />
+            <div className="botonContainer">
+              <button className="botonDescripcion" onClick={() => this.verDescripcion()}>
+                {this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}
+              </button>
+              {this.state.showExtra && <p>{overview}</p>}
+              <Link to={`/movies/${id}`}><button className="botonDetalle">Ver detalle</button></Link>
+              <BotonFav id={id} />
+            </div>
           </div>
-          </div>
-          
+
 
         </div>
       </article>

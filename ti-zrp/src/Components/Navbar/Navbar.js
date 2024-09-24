@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="logo">
-        <img src="./logoPandafilm.png" alt="Logo" />
+        <Link to="/"><img src="./logoPandafilm.png" alt="Logo" /></Link>
       </div>
       <ul className="main-nav">
         <Link to="/">Home</Link>
@@ -14,8 +14,8 @@ const Navbar = () => {
         <Link to="/cartelera">Cartelera</Link>
       </ul>
       <div className="user">
-        <span>Nombre usuario</span>
-        <img src="./logo192.png" alt="User" />
+        <span>Kung Fu Panda</span>
+        <img className="fotoPerfil" src="./fotoPerfil.png" alt="User" />
       </div>
     </nav>
   );

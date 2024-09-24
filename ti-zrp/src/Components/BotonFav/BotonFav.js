@@ -60,7 +60,7 @@ class BotonFav extends Component {
           <button onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>
             {!this.state.esFavorito ? <FontAwesomeIcon icon={faStarEmpty} /> : <FontAwesomeIcon icon={faStarFilled} />}
           </button>
-        </div>        
+        </div>
       </>
     )
   }
