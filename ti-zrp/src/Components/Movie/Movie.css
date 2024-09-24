@@ -37,19 +37,22 @@
   cursor: pointer;
 }
 
-.botonContainer button:hover {
-  background-color: #0056b3;
+.botonFav button {
+  background: transparent;
+  color:#FFD700; 
+  border: none; 
+  cursor: pointer; 
+  font-size: 35px
+}
+.botonFav button :hover {
+  color:#ffbb00; 
+
+}
+.tituloMovie {
+  font-size: 20px;
 }
 
-.botonFavorito {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: rgb(255, 217, 0); 
-  font-size: 1.5rem;
-  margin-top: 10px;
+.textoMovie button{
+  font-size: 15px
 }
 
-.botonFavorito:hover {
-  color: #f39c12; 
-}

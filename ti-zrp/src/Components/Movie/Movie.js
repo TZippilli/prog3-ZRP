@@ -68,10 +68,13 @@ class Movie extends Component {
     return (
       <article className='movie-card'>
         <div className="card-content">
-        <Link to={`/movies/${id}`}>{title}
-          <img src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt={title} />
-          <br />
-          </Link>
+          <div className="tituloMovie">
+            <Link to={`/movies/${id}`}>{title}
+              <img src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt={title} />
+              <br />
+            </Link>
+          </div>
+          <div className="textoMovie">
           <div className="botonContainer">
             <button className="botonDescripcion" onClick={() => this.verDescripcion()}>
               {this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}
@@ -79,10 +82,13 @@ class Movie extends Component {
             {this.state.showExtra && <p>{overview}</p>}
             <Link to={`/movies/${id}`}><button className="botonDetalle">Ver detalle</button></Link>
           </div>
-          <button onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>
-            {!this.state.esFavorito ? <FontAwesomeIcon icon={faStarEmpty} /> : <FontAwesomeIcon icon={faStarFilled} />}
-          </button>
-          
+          </div>
+          <div className="botonFav">
+            <button onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>
+              {!this.state.esFavorito ? <FontAwesomeIcon icon={faStarEmpty} /> : <FontAwesomeIcon icon={faStarFilled} />}
+            </button>
+          </div>
+
         </div>
       </article>
     );

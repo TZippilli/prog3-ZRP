@@ -33,11 +33,11 @@ class Favoritos extends Component {
     const { movies } = this.state;
     return (
       <>
-      <h2>Lista de Favoritos</h2>
+      <h3>Lista de Favoritos</h3>
         {movies.length > 0 ? (
           <MovieGrid pelis={movies} />
         ) : (
-          <p>No hay películas en favoritos.</p>
+          <p className='textoGeneral'>No hay películas en favoritos.</p>
         )}
       </>
     );
