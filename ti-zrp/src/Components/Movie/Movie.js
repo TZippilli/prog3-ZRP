@@ -2,7 +2,8 @@ import "./Movie.css"
 import { Link } from "react-router-dom";
 import { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; //descargo libreria para icono de estrella
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarFilled } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
 
 
 
@@ -67,9 +68,10 @@ class Movie extends Component {
     return (
       <article className='movie-card'>
         <div className="card-content">
+        <Link to={`/movies/${id}`}>{title}
           <img src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt={title} />
           <br />
-          <Link to={`/movies/${id}`}>{title}</Link>
+          </Link>
           <div className="botonContainer">
             <button className="botonDescripcion" onClick={() => this.verDescripcion()}>
               {this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}
@@ -77,11 +79,9 @@ class Movie extends Component {
             {this.state.showExtra && <p>{overview}</p>}
             <Link to={`/movies/${id}`}><button className="botonDetalle">Ver detalle</button></Link>
           </div>
-          <Link to={`/favoritos`}>
           <button onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>
-            {!this.state.esFavorito ? <FontAwesomeIcon icon={faStar} /> : "Quitar de favoritos"}
+            {!this.state.esFavorito ? <FontAwesomeIcon icon={faStarEmpty} /> : <FontAwesomeIcon icon={faStarFilled} />}
           </button>
-          </Link>
           
         </div>
       </article>

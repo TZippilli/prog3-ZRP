@@ -1,63 +1,47 @@
-import React, { Component } from 'react'
-import Movie from '../Components/Movie/Movie'
-import "../Components/Movie/Movie.css"
- 
+import React, { Component } from 'react';
+import MovieGrid from "../Components/MovieGrid/MovieGrid";
 
 class Favoritos extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       movies: [],
       isLoading: true
-    }
+    };
   }
 
   componentDidMount() {
-    this.setState({
-      isLoading: true
-    })
-    const storage = localStorage.getItem('favoritos')
-    const parsedArray = JSON.parse(storage)
-    Promise.all(
-      parsedArray.map((id) => {
-      fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e6a0d8ba2d9778d0953077400f26f011`)
-        .then(response => response.json())
-        .then(movie =>
-          this.setState({
-            movies: [...this.state.movies, movie]
+    const storage = localStorage.getItem('favoritos');
+    if (storage !== null) {
+      const parsedStorage = JSON.parse(storage);
 
-          })
-        )
-    })
-  )
-    this.setState({
-      isLoading: false
-    })
-
+      Promise.all(
+        parsedStorage.map((id) =>
+          fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e6a0d8ba2d9778d0953077400f26f011`)
+            .then((response) => response.json()))
+      ).then((data) => {
+        this.setState({
+          movies: data,
+        });
+      });
+    }
   }
-  render() {
-    return (
-     
-      <div className='popular-container'>
-      <div className="card-content">
-        {!this.state.isLoading ? (
-          this.state.movies.length > 0 ? (
-            this.state.movies
-            .filter(movie => movie.title && movie.poster_path) //algunos id ya no estaban disponibles entonces me aseguro que sean válidos para que no se rompa la pagina
-            .map(movie => <Movie key={movie.id} movie={movie}/>) 
-          ) : (
-            <p>Aún no has guardado ninguna película en favoritos!</p>
-          )
-        ) : (
-          <p>Loading ...</p>
-        )}
-      </div>
-      </div>
 
+  render() {
+    const { movies } = this.state;
+    return (
+      <>
+      <h2>Lista de Favoritos</h2>
+        {movies.length > 0 ? (
+          <MovieGrid pelis={movies} />
+        ) : (
+          <p>No hay películas en favoritos.</p>
+        )}
+      </>
     );
   }
 }
 
-export default Favoritos
+export default Favoritos;
