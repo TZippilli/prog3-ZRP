@@ -1,59 +1,15 @@
 import "./Movie.css"
 import { Link } from "react-router-dom";
 import { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; //descargo libreria para icono de estrella
-import { faStar as faStarFilled } from '@fortawesome/free-solid-svg-icons';
-import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
-
+import BotonFav from "../BotonFav/BotonFav";
 
 
 class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showExtra: false,
-      esFavorito: false
+      showExtra: false
     };
-  }
-
-  componentDidMount() {
-    const storage = localStorage.getItem('favoritos')
-    if (storage !== null) {
-      const parsedArray = JSON.parse(storage)
-      const estaEnFavoritos = parsedArray.includes(this.props.movie.id)
-      this.setState({
-        esFavorito: estaEnFavoritos
-      })
-    }
-  }
-
-  agregarFavorito() {
-    const storage = localStorage.getItem('favoritos')
-    if (storage !== null) {
-      const parsedArray = JSON.parse(storage)
-      parsedArray.push(this.props.movie.id)
-      const stringArray = JSON.stringify(parsedArray)
-      localStorage.setItem('favoritos', stringArray)
-    } else {
-      const primerMovie = [this.props.movie.id]
-      const stringArray = JSON.stringify(primerMovie)
-      localStorage.setItem('favoritos', stringArray)
-    }
-    this.setState({
-      esFavorito: true
-    })
-  }
-
-  sacarFavorito() {
-    const storage = localStorage.getItem('favoritos')
-    const parsedArray = JSON.parse(storage)
-    const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id)
-    const stringArray = JSON.stringify(favoritosRestantes)
-    localStorage.setItem('favoritos', stringArray)
-
-    this.setState({
-      esFavorito: false
-    })
   }
 
   verDescripcion() {
@@ -81,13 +37,10 @@ class Movie extends Component {
             </button>
             {this.state.showExtra && <p>{overview}</p>}
             <Link to={`/movies/${id}`}><button className="botonDetalle">Ver detalle</button></Link>
+            <BotonFav id={id} />
           </div>
           </div>
-          <div className="botonFav">
-            <button onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>
-              {!this.state.esFavorito ? <FontAwesomeIcon icon={faStarEmpty} /> : <FontAwesomeIcon icon={faStarFilled} />}
-            </button>
-          </div>
+          
 
         </div>
       </article>

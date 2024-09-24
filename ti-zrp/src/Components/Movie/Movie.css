@@ -37,17 +37,7 @@
   cursor: pointer;
 }
 
-.botonFav button {
-  background: transparent;
-  color:#FFD700; 
-  border: none; 
-  cursor: pointer; 
-  font-size: 35px
-}
-.botonFav button :hover {
-  color:#ffbb00; 
 
-}
 .tituloMovie {
   font-size: 20px;
 }
@@ -55,4 +45,3 @@
 .textoMovie button{
   font-size: 15px
 }
-

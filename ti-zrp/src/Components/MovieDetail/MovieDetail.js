@@ -1,5 +1,6 @@
 import "./MovieDetail.css";
 import { Component } from "react";
+import BotonFav from "../BotonFav/BotonFav";
 
 class MovieDetail extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class MovieDetail extends Component {
   }
 
   componentDidMount() {
-    const { movieId } = this.props.match.params; 
+    const { movieId } = this.props.match.params;
    
     fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US`)
       .then(response => response.json())
@@ -44,6 +45,7 @@ class MovieDetail extends Component {
           <p><strong>Duración:</strong> {runtime} minutos</p>
           <p><strong>Géneros:</strong> {generos}</p>
           <p><strong>Sinopsis:</strong> {overview}</p>
+          <BotonFav  id={movie.id}/>
         </div>
         </div>
       </section>
