@@ -40,3 +40,9 @@ h3 {
     cursor: pointer;
     margin: 5px 0;
 }
+
+.textoResults{
+    color:white;
+    padding-top: 200px;
+    font-size: 20px;
+}
