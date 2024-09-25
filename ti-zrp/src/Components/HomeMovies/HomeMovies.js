@@ -22,7 +22,7 @@ export class HomeMovies extends Component {
     render() {
         return (
             <div>
-            {this.state.movieList.length === 0 ? <p>Cargando...</p> : <MovieGrid pelis={this.state.movieList} /> }
+            {this.state.movieList.length === 0 ? <img src="./gifLoader.gif" alt="loader" ></img> : <MovieGrid pelis={this.state.movieList} /> }
             </div>
         )
     }

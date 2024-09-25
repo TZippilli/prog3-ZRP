@@ -31,9 +31,11 @@ class Favoritos extends Component {
 
   render() {
     const { movies } = this.state;
+    
     return (
       <>
       <h3>Lista de Favoritos</h3>
+      
         {movies.length > 0 ? (
           <MovieGrid pelis={movies} />
         ) : (

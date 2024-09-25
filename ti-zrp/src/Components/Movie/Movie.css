@@ -45,3 +45,25 @@
 .textoMovie button{
   font-size: 15px
 }
+
+.notFoundPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  height: 100vh; 
+  padding-top: 20px; 
+}
+
+.notFoundText {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.notFoundImage {
+  max-width: 100%; /* Aumenta el ancho máximo de la imagen */
+  width: 550px; /* Ajusta el tamaño de la imagen */
+  height: auto; /* Mantiene la proporción */}
+
+

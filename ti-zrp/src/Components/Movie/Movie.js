@@ -20,6 +20,7 @@ class Movie extends Component {
 
   render() {
     const { id, title, poster_path, overview } = this.props.movie;
+    
 
     return (
       <article className='movie-card'>

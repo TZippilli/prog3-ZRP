@@ -70,7 +70,7 @@ class PaginaPopulares extends Component {
           <div className='botonesGeneral'>
           <input type="text" onChange={(e)=> this.handleFilterChange(e)} value={this.state.filterValue} />
           <button onClick={()=>this.handleResetFilter()}>Reset Filter</button>
-          {this.state.movies.length === 0 ? <p>Cargando</p>  : <MovieGrid pelis={this.state.filteredMovies}  /> }
+          {this.state.movies.length === 0 ? <img src="./gifLoader.gif" alt="loader" ></img>  : <MovieGrid pelis={this.state.filteredMovies}  /> }
           {<button onClick={()=>this.handleLoadMore()}>Cargar más</button>}
           </div>
         </main>
