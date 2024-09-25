@@ -39,7 +39,7 @@ class Favoritos extends Component {
         {movies.length > 0 ? (
           <MovieGrid pelis={movies} />
         ) : (
-          <p className='textoGeneral'>No hay películas en favoritos.</p>
+          <p className='texto-general'>No hay películas en favoritos.</p>
         )}
       </>
     );

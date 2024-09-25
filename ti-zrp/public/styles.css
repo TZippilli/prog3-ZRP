@@ -11,18 +11,18 @@ h3 {
     font-size: 30px
 }
 
-.textoGeneral {
+.texto-general {
     color: white
 }
 
-.botonesGeneral {
+.botones-general {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px 0;
 }
 
-.botonesGeneral input {
+.botones-general input {
     padding: 10px;
     border: 2px solid #1035a2;
     border-radius: 5px;
@@ -30,7 +30,7 @@ h3 {
     margin-bottom: 10px;
 }
 
-.botonesGeneral button {
+.botones-general button {
     background-color: #1b4ad6;
     color: #fff;
     border: 0.5px solid white;
@@ -41,7 +41,7 @@ h3 {
     margin: 5px 0;
 }
 
-.textoResults{
+.texto-results{
     color:white;
     padding-top: 200px;
     font-size: 20px;

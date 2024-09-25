@@ -13,7 +13,7 @@
   font-family: 'Baloo 2', cursive;
 }
 
-.tituloGrupo {
+.titulo-grupo {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -21,12 +21,12 @@
 
 }
 
-.tituloConBoton {
+.titulo-con-boton {
   display: flex;
   align-items: center;
 }
 
-.tituloConBoton button{
+.titulo-con-boton button{
   background-color: #007bff;
   color: white;
   border: none;
@@ -34,11 +34,11 @@
   cursor: pointer;
 }
 
-.tituloConBoton button:hover{
+.titulo-con-boton button:hover{
   background-color: #034790;
 }
 
-.tituloSeccion {
+.titulo-seccion {
   margin-right: 20px;
   color: white;
   font-family: 'Baloo 2', cursive;

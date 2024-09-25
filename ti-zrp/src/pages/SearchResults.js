@@ -41,7 +41,7 @@ export default class SearchResults extends Component {
               <Movie movie={movie} key={index} />
             ))
           ) : (
-            <p className='textoResults'>No se encontraron resultados.</p>
+            <p className='texto-results'>No se encontraron resultados.</p>
           )}
         </div>
       </div>

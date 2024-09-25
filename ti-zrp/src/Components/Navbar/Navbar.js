@@ -15,7 +15,7 @@ const Navbar = () => {
       </ul>
       <div className="user">
         <span>Kung Fu Panda</span>
-        <img className="fotoPerfil" src="./fotoPerfil.png" alt="User" />
+        <img className="foto-perfil" src="./fotoPerfil.png" alt="User" />
       </div>
     </nav>
   );

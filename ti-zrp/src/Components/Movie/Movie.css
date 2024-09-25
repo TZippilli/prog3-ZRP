@@ -20,14 +20,14 @@
   text-align: center;
 }
 
-.botonContainer {
+.boton-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.botonContainer button {
+.boton-container button {
   margin-top: 5px;
   padding: 5px;
   background-color: #007bff;
@@ -38,15 +38,15 @@
 }
 
 
-.tituloMovie {
+.titulo-movie {
   font-size: 20px;
 }
 
-.textoMovie button{
+.texto-movie button{
   font-size: 15px
 }
 
-.notFoundPage {
+.not-found-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,13 +55,13 @@
   padding-top: 20px; 
 }
 
-.notFoundText {
+.not-found-text {
   color: white;
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.notFoundImage {
+.not.found-image {
   max-width: 100%; /* Aumenta el ancho máximo de la imagen */
   width: 550px; /* Ajusta el tamaño de la imagen */
   height: auto; /* Mantiene la proporción */}

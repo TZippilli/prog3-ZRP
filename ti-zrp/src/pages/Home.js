@@ -9,7 +9,7 @@ const Home = (props) => {
       <main>
        <SearchForm history={props.history}/>
        <h3>Películas Populares</h3>
-       <div className="botonesGeneral">
+       <div className="botones-general">
        <Link to="/populares"> 
        <button>Ver todas</button>
        </Link>
@@ -17,7 +17,7 @@ const Home = (props) => {
        <HomeMovies link={"/populares"} titulo={"Películas Populares"}  url={'https://api.themoviedb.org/3/movie/now_playing?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=1'}/>
 
        <h3>Películas en Cartelera</h3>
-       <div className="botonesGeneral">
+       <div className="botones-general">
        <Link to="/cartelera"> 
        <button>Ver todas</button>
        </Link>

@@ -56,7 +56,7 @@ class BotonFav extends Component {
   render() {
     return (
       <>
-        <div className="botonFav">
+        <div className="boton-fav">
           <button onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>
             {!this.state.esFavorito ? <FontAwesomeIcon icon={faStarEmpty} /> : <FontAwesomeIcon icon={faStarFilled} />}
           </button>

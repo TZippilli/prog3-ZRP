@@ -2,10 +2,10 @@ import React from 'react';
 
 const NotFound = () => {
   return (
-    <div className="notFoundPage">
-      <h1 className="notFoundText">Page Not Found</h1>
-      <h1 className="notFoundText">La página que estas buscando no existe</h1>
-      <img className="notFoundImage" src="/notFound.png" alt="Not Found" />
+    <div className="not-found-page">
+      <h1 className="not-found-text">Page Not Found</h1>
+      <h1 className="not-found-text">La página que estas buscando no existe</h1>
+      <img className="not-found-image" src="/notFound.png" alt="Not Found" />
     </div>
   );
 }

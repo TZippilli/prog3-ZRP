@@ -1,10 +1,10 @@
-.botonFav button {
+.boton-fav button {
     background: transparent;
     color:#FFD700; 
     border: none; 
     cursor: pointer; 
     font-size: 35px
   }
-  .botonFav button :hover {
+  .boton-fav button :hover {
     color:#ffbb00; 
   }

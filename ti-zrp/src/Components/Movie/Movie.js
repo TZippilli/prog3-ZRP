@@ -25,19 +25,19 @@ class Movie extends Component {
     return (
       <article className='movie-card'>
         <div className="card-content">
-          <div className="tituloMovie">
+          <div className="titulo-movie">
             <Link to={`/movies/${id}`}>{title}
               <img src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt={title} />
               <br />
             </Link>
           </div>
-          <div className="textoMovie">
-            <div className="botonContainer">
-              <button className="botonDescripcion" onClick={() => this.verDescripcion()}>
+          <div className="texto-movie">
+            <div className="boton-container">
+              <button className="boton-descripcion" onClick={() => this.verDescripcion()}>
                 {this.state.showExtra ? "Ocultar descripción" : "Ver descripción"}
               </button>
               {this.state.showExtra && <p>{overview}</p>}
-              <Link to={`/movies/${id}`}><button className="botonDetalle">Ver detalle</button></Link>
+              <Link to={`/movies/${id}`}><button className="boton-detalle">Ver detalle</button></Link>
               <BotonFav id={id} />
             </div>
           </div>

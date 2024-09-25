@@ -67,7 +67,7 @@ class PaginaCarteleras extends Component {
       <>
         <main>
           <h3>Películas en Cartelera</h3>
-          <div className='botonesGeneral'>
+          <div className='botones-general'>
           <input type="text" onChange={(e)=> this.handleFilterChange(e)} value={this.state.filterValue} />
           <button onClick={()=>this.handleResetFilter()}>Reset Filter</button>
           {this.state.movies.length === 0 ? <img src="./gifLoader.gif" alt="loader" ></img>  : <MovieGrid pelis={this.state.filteredMovies}  /> }
