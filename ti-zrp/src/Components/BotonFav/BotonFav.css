@@ -8,3 +8,9 @@
   .boton-fav button :hover {
     color:#ffbb00; 
   }
+
+  @media only screen and (max-width: 420px) {
+    .boton-fav button {
+        font-size: 28px;
+    }
+}

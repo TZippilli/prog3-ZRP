@@ -62,8 +62,36 @@
 }
 
 .not.found-image {
-  max-width: 100%; /* Aumenta el ancho máximo de la imagen */
-  width: 550px; /* Ajusta el tamaño de la imagen */
-  height: auto; /* Mantiene la proporción */}
+  max-width: 100%;
+  width: 550px;
+  height: auto;
+}
 
 
+@media only screen and (max-width: 420px) {
+  .movie-card {
+    width: 150px;
+    margin: 5px;
+  }
+
+  .titulo-movie {
+    font-size: 16px;
+  }
+
+  .texto-movie button {
+    font-size: 13px;
+  }
+
+  .boton-container button {
+    padding: 3px;
+    font-size: 12px;
+  }
+
+  .not-found-text {
+    font-size: 1.5rem;
+  }
+
+  .not-found-image {
+    width: 300px;
+  }
+}

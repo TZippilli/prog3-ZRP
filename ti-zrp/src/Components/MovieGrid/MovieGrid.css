@@ -53,3 +53,37 @@
   font-family: 'Baloo 2', cursive; 
   position: relative; 
 }
+
+@media only screen and (max-width: 420px) {
+  .popular-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popular-card {
+    gap: 20px;
+  }
+
+  .titulo-grupo {
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .titulo-con-boton {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .titulo-seccion {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .search-title {
+    flex-direction: column;
+    padding: 5px 10px;
+    align-items: center;
+  }
+}
